@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:c19/Classes/country.dart';
 import 'package:c19/Utils/c19_colors.dart';
+import 'package:c19/Utils/global_functions.dart';
 import 'package:flutter/material.dart';
 
 class InfoCountry extends StatelessWidget{
@@ -14,10 +15,23 @@ class InfoCountry extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: ()=> Navigator.pushNamed(context, '/summary', arguments: {'country':country}),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-        height: 65,
+        margin: const EdgeInsets.symmetric(vertical: 10),
+        height: 100,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: const [
+            BoxShadow(
+                color: Color.fromRGBO(0, 0, 0, 0.14),
+                offset: Offset(0, 0.5),
+                blurRadius: 1.2,
+                spreadRadius: 0
+            ),
+          ],
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -34,8 +48,8 @@ class InfoCountry extends StatelessWidget{
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(country.name, style: const TextStyle(color: C19Colors.leatherJacket, fontSize: 18, fontWeight: FontWeight.w500)),
-                    Text('confirmados: ${country.total}', style: const TextStyle(color: C19Colors.quickSilver, fontSize: 12, fontWeight: FontWeight.bold))
+                    Text(GlobalFunctions.parseCountryName(country.name), style: const TextStyle(color: C19Colors.leatherJacket, fontSize: 18, fontWeight: FontWeight.w500)),
+                    Text('confirmados: ${country.totalConfirmed}', style: const TextStyle(color: C19Colors.quickSilver, fontSize: 12, fontWeight: FontWeight.bold))
                   ],
                 ),
               ],
