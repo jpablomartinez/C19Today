@@ -10,8 +10,8 @@ class NoData extends StatelessWidget {
     return Container(
       height: 200,
       width: 200,
-      padding: EdgeInsets.all(10),
-      child: const Text('No hay datos disponibles', style: TextStyle(color: C19Colors.leatherJacket, fontSize: 20, fontWeight: FontWeight.w500))
+      padding: const EdgeInsets.all(10),
+      child: const Center(child: Text('No hay datos disponibles', style: TextStyle(color: C19Colors.leatherJacket, fontSize: 25, fontWeight: FontWeight.w500), textAlign: TextAlign.center))
     );
   }
 

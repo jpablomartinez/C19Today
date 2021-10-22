@@ -1,16 +1,9 @@
-# c19
+# C19 Today
 
-A new Flutter project.
+## A considerar
 
-## Getting Started
+Aplicación móvil híbrida (PoC) hecha en Flutter 2.5.2 que permite conocer la cantidad de casos confirmados de Covi-19 y la evolución de estos.
 
-This project is a starting point for a Flutter application.
+Los datos son obtenidos de:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Coronavirus COVID 19 API](https://documenter.getpostman.com/view/10808728/SzS8rjbc?versio=&version=latest)
