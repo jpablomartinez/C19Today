@@ -1,6 +1,7 @@
 class Country {
 
   String name = '';
+  String countryCode = '';
   int totalConfirmed = 0;
   int newConfirmed = 0;
   int newDeaths = 0;
@@ -10,6 +11,7 @@ class Country {
 
   Country({
     required this.name,
+    required this.countryCode,
     required this.totalConfirmed,
     required this.newConfirmed,
     required this.newDeaths,
@@ -22,6 +24,7 @@ class Country {
     try{
       return Country(
         name: json['Country'] ?? 'No named',
+        countryCode: json['CountryCode'] ?? '',
         totalConfirmed: json['TotalConfirmed'] ?? 0,
         newConfirmed: json['NewConfirmed'] ?? 0,
         newDeaths: json['NewDeaths'] ?? 0,
@@ -31,7 +34,7 @@ class Country {
       );
     }
     catch(e,s){
-      return Country(name: '', totalConfirmed: 0, newConfirmed: 0, newDeaths: 0, newRecovered: 0, totalRecovered: 0, totalDeaths: 0);
+      return Country(name: '', countryCode: '', totalConfirmed: 0, newConfirmed: 0, newDeaths: 0, newRecovered: 0, totalRecovered: 0, totalDeaths: 0);
     }
   }
 

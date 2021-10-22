@@ -8,12 +8,14 @@ import 'package:dio/dio.dart';
 
 class SyncController {
 
+  ///Checks if mobile is connected to wifi or mobile data
   Future<bool> isConnected() async{
     var conn = await Connectivity().checkConnectivity();
     if(conn == ConnectivityResult.mobile || conn == ConnectivityResult.wifi) return checkConnection();
     else return false;
   }
 
+  ///Checks if device can use internet
   Future<bool> checkConnection() async {
     bool hasConn = false;
     try{
@@ -25,6 +27,7 @@ class SyncController {
     return hasConn;
   }
 
+  ///Function to get JSON with confirmed cases and other stuffs for all countries
   Future<List<Country>> getConfirmedCasesAllCountries() async{
     List<Country> countries = [];
     try{

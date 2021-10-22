@@ -7,5 +7,3 @@ class Routes {
 
   static const allStatusCountry = 'https://api.covid19api.com/live/country/';
 }
-
-////Live By Country All Status

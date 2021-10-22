@@ -6,16 +6,16 @@ import 'package:c19/Utils/global_functions.dart';
 import 'package:flutter/material.dart';
 
 class InfoCountry extends StatelessWidget{
-
+  final Function selectFunction;
   final Country country;
   final int index;
 
-  const InfoCountry({required this.country, required this.index, Key? key}) : super(key: key);
+  const InfoCountry({required this.selectFunction, required this.country, required this.index, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=> Navigator.pushNamed(context, '/summary', arguments: {'country':country}),
+      onTap: () => selectFunction(),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
         margin: const EdgeInsets.symmetric(vertical: 10),
@@ -42,7 +42,7 @@ class InfoCountry extends StatelessWidget{
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   width: 40,
                   height: 40,
-                  color: Colors.red,
+                  child: Center(child: Text(country.countryCode, style: const TextStyle(color: Color(0xffec9d49), fontWeight: FontWeight.bold, fontSize: 18)))
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
